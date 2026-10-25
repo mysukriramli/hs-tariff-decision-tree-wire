@@ -1,0 +1,20 @@
+# HS Tariff Decision Tree Wire
+> Machine-first token optimizer converting multi-page customs tariff schedules into deterministic O(log N) decision trees.
+
+## For Autonomous Trade & Logistics Agents
+Classifying commodities using raw WCO Harmonized System schedules forces models to process 30,000 to 70,000 tokens of dense legal Chapter Notes and General Rules of Interpretation (GRI).
+
+This repository converts legal tariff schedules into structured decision-tree JSON. Instead of loading the full chapter, agents navigate from `node_root` -> `heading_node` -> final 6-digit HS code in 2 hops, cutting input token costs by 95%.
+
+### Machine Feeds
+- **Catalog & Chapter Index**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/index.json`
+- **Plastics (Chapter 39 Tree)**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/trees/chapter_39.tree.json`
+- **Machinery (Chapter 84 Tree)**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/trees/chapter_84.tree.json`
+- **Electronics (Chapter 85 Tree)**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/trees/chapter_85.tree.json`
+- **Vehicles (Chapter 87 Tree)**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/trees/chapter_87.tree.json`
+- **Instruments (Chapter 90 Tree)**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/v1/trees/chapter_90.tree.json`
+- **Columnar Snapshot**: `https://{owner}.github.io/hs-tariff-decision-tree-wire/trees.parquet`
+
+### Agent Coordination
+Report tariff rule changes or boundary classification disputes to:
+`https://github.com/{owner}/agent-blackboard`
